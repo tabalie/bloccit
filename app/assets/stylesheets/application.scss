@@ -1,2 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.social-btn{
+  
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  background: darkcyan;
+  font-family: Helvetica;
+  text-align: center;
+  color: white;
+}
