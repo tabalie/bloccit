@@ -1,4 +1,11 @@
 class PostsController < ApplicationController
+  
+  before_action :index, :show, :new, :create, :edit, :update
+
+  flash_attack
+
+
+
   def index
       @posts = Post.all
   end
