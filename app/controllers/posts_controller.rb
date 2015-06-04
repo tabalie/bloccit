@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
-  
-  before_action :index, :show, :new, :create, :edit, :update
+ 
+  # before_action :flash_attack
 
-  flash_attack
-
-
+  # private 
+    
+  # def flash_attack
+  #   flash[:warning] = "FLASH ATTACK"
+  # end
 
   def index
       @posts = Post.all
