@@ -14,7 +14,6 @@ class PostsController < ApplicationController
   end
 
   def create
-      @post = Post.new(params.require(:post).permit(:title, :body))
       @post = current_user.posts.build(params.require(:post).permit(:title, :body))
       authorize @post
       if @post.save
