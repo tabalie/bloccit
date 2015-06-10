@@ -47,6 +47,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Installed Figaro, for handling sensitive data and environmental variables (CP 37 060315)
 gem 'figaro', '1.0'
 
+# Installed Pundit which makes it easier to authorize different users for different tasks (CP 39 060915)
+gem 'pundit'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
