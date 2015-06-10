@@ -1,13 +1,7 @@
 class PostsController < ApplicationController
  
-  # before_action :flash_attack
-
-  # private 
-    
-  # def flash_attack
-  #   flash[:warning] = "FLASH ATTACK"
-  # end
-
+  skip_before_action :flash_attack, only: [:index, :new]
+  
   def index
       @posts = Post.all
   end
