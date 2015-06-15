@@ -11,7 +11,7 @@ class PostPolicy < ApplicationPolicy
         scope.all
       elsif user.moderator?
         scope.all
-      elsif
+      else
         scope.where( user: user )
       end
     end

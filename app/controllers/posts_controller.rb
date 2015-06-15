@@ -1,16 +1,17 @@
 class PostsController < ApplicationController
+  
   def index
-      @posts = PostPolicy::Scope.new(current_user, Post).resolve
-      authorize @posts
+    @posts = policy_scope(Post)
+    authorize @posts
   end
 
   def show
-      @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new
-      @post = Post.new
-      authorize @post
+    @post = Post.new
+    authorize @post
   end
 
   def create
@@ -26,20 +27,20 @@ class PostsController < ApplicationController
   end
 
   def edit
-      @post = Post.find(params[:id])
-      authorize @post
+    @post = Post.find(params[:id])
+    authorize @post
   end
 
   def update
-     @post = Post.find(params[:id])
-     authorize @post
-     if @post.update_attributes(params.require(:post).permit(:title, :body))
-       flash[:notice] = "Post was updated."
-       redirect_to @post
-     else
-       flash[:error] = "There was an error saving the post. Please try again."
-       render :edit
-     end
+    @post = Post.find(params[:id])
+    authorize @post
+    if @post.update_attributes(params.require(:post).permit(:title, :body))
+      flash[:notice] = "Post was updated."
+      redirect_to @post
+    else
+      flash[:error] = "There was an error saving the post. Please try again."
+      render :edit
+    end
   end
 
 end
