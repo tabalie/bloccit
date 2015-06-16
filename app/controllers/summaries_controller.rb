@@ -2,7 +2,7 @@ class SummariesController < ApplicationController
   
   def new
     @topic = Topic.find(params[:topic_id])
-    @post = @topic.post.find(params[:post_id])
+    @post = @topic.posts.find(params[:post_id])
     @summary = Summary.new
   end
 
