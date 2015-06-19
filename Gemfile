@@ -17,6 +17,9 @@ end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+# Added Redcarpet, Markdown library (CP 43 061915)
+gem 'redcarpet'
+
 #Added Bootstrap-Sass Gem (CP 29 053115)
 gem 'bootstrap-sass'
 
