@@ -29,6 +29,9 @@ gem 'mini_magick'
 # Added Fog, a cloud services library
 gem 'fog'
 
+# Added will_paginate - for easy pagination (CP 45 061915)
+gem 'will_paginate', '~> 3.0.5'
+
 #Added Bootstrap-Sass Gem (CP 29 053115)
 gem 'bootstrap-sass'
 
