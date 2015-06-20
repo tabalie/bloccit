@@ -20,6 +20,15 @@ gem 'sass-rails', '~> 5.0'
 # Added Redcarpet, Markdown library (CP 43 061915)
 gem 'redcarpet'
 
+# Added CarrierWave, image uploading software (CP 44 061915)
+gem 'carrierwave'
+
+# Added MiniMagick - for manipulating images (CP 44 061915)
+gem 'mini_magick'
+
+# Added Fog, a cloud services library
+gem 'fog'
+
 #Added Bootstrap-Sass Gem (CP 29 053115)
 gem 'bootstrap-sass'
 
