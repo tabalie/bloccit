@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :topic
 
+  self.per_page = 100
+
   default_scope { order('created_at DESC') }
 
   validates :title, length: { minimum: 5 }, presence: true

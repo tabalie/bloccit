@@ -1,14 +1,14 @@
 require 'faker'
 
 # Create Users
- 5.times do
+  5.times do
     user = User.new(
       name:     Faker::Name.name,
       email:    Faker::Internet.email,
       password: Faker::Lorem.characters(10)
     )
-    user.skip_confirmation!
-    user.save!
+  user.skip_confirmation!
+  user.save!
   end
   users = User.all
  
@@ -21,7 +21,7 @@ require 'faker'
  # The `save` method then saves this User to the database.
  
  # Create Topics
- 15.times do
+  100.times do
     Topic.create!(
       name: Faker::Lorem.sentence,
       description: Faker::Lorem.paragraph
@@ -31,7 +31,7 @@ require 'faker'
 
 
  # Create Posts
- 50.times do
+  9000.times do
     Post.create!(
       user: users.sample,
       topic: topics.sample,
@@ -39,7 +39,7 @@ require 'faker'
       body:   Faker::Lorem.paragraph
     )
   end
- posts = Post.all
+  posts = Post.all
  
  # Create Comments
  100.times do
@@ -83,5 +83,6 @@ require 'faker'
  
  puts "Seed finished"
  puts "#{User.count} users created"
+ puts "#{Topic.count} topics created"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
