@@ -53,7 +53,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
 
     if @topic.destroy
-      redirect_to @topic, notice: "\"#{{@topic.name}\" was deleted successfully."
+      redirect_to @topic, notice: "\"#{@topic.name}\" was deleted successfully."
     else
       flash[:error] = "There was an error deleting the topic. Please try again."
       render :show
