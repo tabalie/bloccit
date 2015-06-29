@@ -1,7 +1,5 @@
 class CommentsController < ApplicationController
-  def index
-  end
-
+  
   def create
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:post_id])
@@ -14,12 +12,6 @@ class CommentsController < ApplicationController
       flash[:error] = "There was an error saving the comment. Please try again."
       redirect_to [@topic, @post]
     end
-  end
-
-  def show
-  end
-
-  def edit
   end
 
   private
