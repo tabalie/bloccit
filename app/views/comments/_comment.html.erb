@@ -1,1 +1,8 @@
-<!-- Comment Partial -->
++<p>
++  <%= comment.body %>
++  <% if comment.user %>
++    <small>
++      <em><%= comment.user.name || comment.user.email %></em>
++    </small>
++  <% end %>
++</p> 
