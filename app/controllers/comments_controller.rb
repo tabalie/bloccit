@@ -3,8 +3,8 @@ class CommentsController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:post_id])
-    @comment = @post.comments.new(comments_params)
-    @comment.user_id = current_user.id    
+    @comment = current_user.comments.build(comments_params)
+   
     if @comment.save
       flash[:notice] = "Comment was saved."
       redirect_to [@topic, @post]
