@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150629192700) do
     t.integer  "user_id"
   end
 
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "posts", force: :cascade do |t|
@@ -30,10 +31,8 @@ ActiveRecord::Schema.define(version: 20150629192700) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "topic_id"
-    t.integer  "comment_id"
   end
 
-  add_index "posts", ["comment_id"], name: "index_posts_on_comment_id"
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
