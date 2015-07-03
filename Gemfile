@@ -32,7 +32,7 @@ gem 'fog'
 # Added will_paginate - for easy pagination (CP 45 061915)
 gem 'will_paginate', '~> 3.0.5'
 
-#Added Bootstrap-Sass Gem (CP 29 053115)
+# Added Bootstrap-Sass Gem (CP 29 053115)
 gem 'bootstrap-sass'
 
 # Use Uglifier as compressor for JavaScript assets
@@ -74,6 +74,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Added Rspec (CP 48 070215)
+  gem 'rspec-rails', '~> 3.0'
 end
 
 # Use ActiveModel has_secure_password
