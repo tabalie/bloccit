@@ -24,6 +24,8 @@
   <h2>Comments</h2>
   <div class="col-md-4">
     <%= render @comments %><br>
-    <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
+    <% if policy(@comment).create? %>
+      <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
+    <% end %>
   </div>
 </div>
