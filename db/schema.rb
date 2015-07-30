@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20150722023038) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "votes", force: :cascade do |t|
+    t.integer "value"
   end
 
 end
