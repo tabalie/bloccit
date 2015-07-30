@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+validates :value, inclusion: { in: [-1, 1], message: "%{value} is not a valid vote." }
+
 describe Vote do
   describe "validations" do
     describe "value validation" do
