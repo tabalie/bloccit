@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150722023038) do
 
   create_table "votes", force: :cascade do |t|
     t.integer "value"
+    t.integer "post_id"
   end
 
 end
