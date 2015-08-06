@@ -77,6 +77,9 @@ group :development, :test do
 
   # Added Rspec (CP 48 070215)
   gem 'rspec-rails', '~> 3.0'
+
+  #Added Capybara (CP 53 080515)
+  gem 'capybara'
 end
 
 # Use ActiveModel has_secure_password
