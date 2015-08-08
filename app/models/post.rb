@@ -1,9 +1,10 @@
 class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+
   belongs_to :user
   belongs_to :topic
-  has_many :favorites, dependent: :destroy
 
   default_scope { order('rank DESC') }
   scope :visible_to, -> (user) { user ? all : joins(:topic).where('topics.public' => true) }
@@ -16,6 +17,10 @@ class Post < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  def markdown_title
+    render_as_markdown(self.title)
+  end
+   
   def up_votes
     votes.where(value: 1).count
   end
@@ -25,7 +30,11 @@ class Post < ActiveRecord::Base
   end
 
   def points
-    votes.sum(:value)
+    return votes.sum(:value)
+  end
+
+  def markdown_body
+    render_as_markdown(body)
   end
 
   def update_rank
@@ -35,12 +44,17 @@ class Post < ActiveRecord::Base
     update_attribute(:rank, new_rank)
   end
 
-  after_create :create_vote
+  def create_vote
+    user.votes.create(value: 1, post: self)
+  end
 
   private
 
-  def create_vote
-    user.votes.create(value: 1, post: self)
+  def render_as_markdown(markdown)
+    renderer = Redcarpet::Render::HTML.new
+    extensions = {fenced_code_blocks: true}
+    redcarpet = Redcarpet::Markdown.new(renderer, extensions)
+    (redcarpet.render markdown).html_safe
   end
 
 end

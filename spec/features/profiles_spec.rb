@@ -7,6 +7,7 @@ require 'rails_helper'
     before do
       @user = authenticated_user
       @post = associated_post(user: @user)
+      @topic = Topic.create(name: "A topic", description: "A topic")
       @comment = Comment.new(user: @user, post: @post, body: "A Comment")
       allow(@comment).to receive(:send_favorite_emails)
       @comment.save!
