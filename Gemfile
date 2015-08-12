@@ -65,6 +65,9 @@ gem 'figaro', '1.0'
 # Installed Pundit which makes it easier to authorize different users for different tasks (CP 39 060915)
 gem 'pundit'
 
+# Installed New Relic, a performance monitoring tool (CP 55 081115)
+gem 'newrelic_rpm'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
