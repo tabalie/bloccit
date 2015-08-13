@@ -78,8 +78,11 @@ group :development, :test do
   # Added Rspec (CP 48 070215)
   gem 'rspec-rails', '~> 3.0'
 
-  #Added Capybara (CP 53 080515)
+  # Added Capybara (CP 53 080515)
   gem 'capybara'
+
+  # Added FactoryGirl gem, makes object creation in tests easier. (CP 56 081215)
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 # Use ActiveModel has_secure_password
